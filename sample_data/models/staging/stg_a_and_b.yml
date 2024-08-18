@@ -1,0 +1,28 @@
+version: 2
+
+models:
+  - name: stg_a
+    description: stg_a description
+    columns:
+      - name: aa
+        description: "previously double quotes"
+        tests:
+          - not_null
+          - unique
+
+# include extra instance of columns dict which won't error out in dbt but will error out when using ruamel.yaml
+#    columns:
+      - name: ab
+        description: 'previously single quotes'
+
+
+# include extra instance of models dict which won't error out in dbt but will error out when using ruamel.yaml
+# models:
+  - name: stg_b
+    description: "stg_b description"
+    columns:
+      - name: ba
+        description: previously no quotes
+
+      - name: bb
+        description: '{{ doc("example_docs_block") }}'
