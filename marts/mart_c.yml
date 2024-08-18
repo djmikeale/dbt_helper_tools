@@ -1,0 +1,11 @@
+version: 2
+
+# yml in correct folder and with correct name but with text to be updated
+models:
+  - name: mart_c
+    description: 'mart_c description including a docs block {{ doc("example_docs_block") }}'
+    columns:
+      - name: ca
+        description: '{{ doc("example_docs_block") }}'
+      - name: cb
+        description: "{{ doc('example_docs_block') }}"
